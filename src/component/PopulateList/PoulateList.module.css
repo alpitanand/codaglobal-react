@@ -1,0 +1,11 @@
+.list{
+    background-color: #bdc3c7;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius:5px;
+    width: 95% !important;
+    margin-left: 2.5%; 
+}
+.listitem{
+    width: 100%;
+}
