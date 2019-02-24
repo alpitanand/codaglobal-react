@@ -6,9 +6,11 @@ import ReactTooltip from 'react-tooltip'
 
 
 const displayItems = (props)=>{
-    
-
-    let displayData = props.fetchedData.map((item)=>{
+    let displayData = <p>Sorry nothing found</p>
+    if(props.fetchedData.length!==0){
+       
+   
+     displayData = props.fetchedData.map((item)=>{
         
         return(
             <div className={classes.style} key={item.rank}>
@@ -24,7 +26,7 @@ const displayItems = (props)=>{
           </ReactTooltip>
             </div>   
         )
-    })
+    })}
     return(
     <React.Fragment>
         {displayData}

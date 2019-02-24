@@ -34,6 +34,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot){
+
     if(this.state.numberOfSongInState!==prevState.numberOfSongInState){
       this.setState({loading:true,fetchedItem:[]})
       axios.get(this.hosted+"song/"+this.state.numberOfSongInState).then((response)=>{
@@ -42,9 +43,11 @@ class App extends Component {
         console.log("pressing")
        alert("Please enter number from 1 to 100")
       })
+    
     }
 
     if(this.state.searchedItem!==prevState.searchedItem){
+
       this.setState({loading:true,fetchedItem:[]})
       axios.get(this.hosted+"search/"+this.state.searchedItem).then((response)=>{
         this.setState({fetchedItem:response.data,loading:false})
@@ -52,6 +55,7 @@ class App extends Component {
         alert("Something went wrong")
       })
     }
+  
   }
    
   changed = (event)=>{
